@@ -19,12 +19,6 @@ const headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
 };
 
-const data = `------WebKitFormBoundaryu5hdFbG0TrPW8AQu\r\n` +
-    `Content-Disposition: form-data; name="increment"\r\n\r\n` +
-    `15\r\n------WebKitFormBoundaryu5hdFbG0TrPW8AQu\r\n` +
-    `Content-Disposition: form-data; name="molecule"\r\n\r\n` +
-    `3000\r\n------WebKitFormBoundaryu5hdFbG0TrPW8AQu--\r\n`;
-
 setInterval(() => {
     let bodyFormData = new FormData();
     bodyFormData.append('increment', 15);
@@ -38,7 +32,8 @@ setInterval(() => {
     })
         .then(function (response) {
             //handle success
-            console.log(response.data);
+            const newDate = new Date();
+            if (response && response.data && response.data.success)  console.log(`${newDate}. Thành công rồi.`);
         })
         .catch(function (response) {
             //handle error
