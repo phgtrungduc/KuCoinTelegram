@@ -21,7 +21,7 @@ const headers = {
 
 setInterval(() => {
     let bodyFormData = new FormData();
-    bodyFormData.append('increment', 15);
+    bodyFormData.append('increment', 17);
     bodyFormData.append('molecule', 3000);
 
     axios({
